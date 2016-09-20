@@ -14,13 +14,10 @@ var burger = {
         });
     },
     updateOne: function(objColVals, condition, cb) {
-        orm.updateOne('events', objColVals, condition, function(res){
-            cb(res);
+        orm.updateOne('events', objColVals, condition, function(result){
+            cb(result);
         });
     }   
 }
-
-
-
 
 module.exports = burger;

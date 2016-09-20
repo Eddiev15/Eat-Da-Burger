@@ -1,6 +1,5 @@
 var connection = require("./connection.js");
 
-
 function objToSql(ob){
   //column1=value, column2=value2,...
   var arr = [];
@@ -11,8 +10,6 @@ function objToSql(ob){
 
   return arr.toString();
 }
-
-
 
 var orm = {
     selectAll: function(tableInput, cb) {
@@ -42,7 +39,7 @@ var orm = {
       queryString += condition;
 
       console.log(queryString)
-      
+
       connection.query(queryString, function(err, result) {
         if (err) throw err;
         cb(result);
