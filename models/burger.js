@@ -4,24 +4,18 @@ var orm = require("../config/orm.js");
 
 var burger = {
     selectAll: function(tableInput, cb) {
-        var queryString = 'SELECT * FROM ' + tableInput + ';';
-        connection.query(queryString, function(err, result) {
-            if (err) throw err;
+        orm.selectAll('events', function(result){
             cb(result);
         });
     },
-    insertOne: function(tableInput, cb) {
-        var queryString = '';
-        connection.query(queryString, function(err, result) {
-            if (err) throw err;
+    insertOne: function(tableInput, burgerName, devoured, cb) {
+        orm.insertOne('events', burgerName, devoured, function(result){
             cb(result);
         });
     },
-    updateOne: function(tableInput, cb) {
-        var queryString = '';
-        connection.query(queryString, function(err, result) {
-            if (err) throw err;
-            cb(result);
+    updateOne: function(objColVals, condition, cb) {
+        orm.updateOne('events', objColVals, condition, function(res){
+            cb(res);
         });
     }   
 }
