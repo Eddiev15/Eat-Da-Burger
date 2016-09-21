@@ -28,5 +28,7 @@
   "bugs": {
     "url": "https://github.com/MichelleHettinger/Eat-Da-Burger/issues"
   },
-  "homepage": "https://github.com/MichelleHettinger/Eat-Da-Burger#readme"
+  "engines": {
+    "node": "5.3.0"
+  }
 }
