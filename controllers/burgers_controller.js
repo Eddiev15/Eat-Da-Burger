@@ -20,7 +20,7 @@ router.get('/burgers', function(req,res) {
 
 //Create
 router.post('/burgers/create', function(req,res) {
-	burger.insertOne(['name', 'devoured'], [req.body.name, req.body.devoured], function(data){
+	burger.insertOne('events', req.body.burger_name, req.body.devoured, function(data){
 		res.redirect('/burgers')
 	});
 });
@@ -31,7 +31,7 @@ router.put('/burgers/update/:id', function(req,res) {
 
 	console.log('condition', condition);
 
-	burger.update({'devoured' : req.body.devoured}, condition, function(data){
+	burger.updateOne('events', {'devoured' : req.body.devoured}, condition, function(data){
 		res.redirect('/burgers');
 	});
 });
