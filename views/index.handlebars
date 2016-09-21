@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
 
-    <h1>Eat-Da-Burger!</h1>
-
+    <h1 style="text-align:center">Eat-Da-Burger!</h1>
+    <p style="width:500px; margin-left:30%">You love burgers! You've stuffed your face with several burgers, but you have an insatiable appetite and lust for juicyvburgers. Throw up the burgers on the left and consume the uneated ones on the right, you pig!</p>
     <div class="col-sm-4">
 
-      <h2>Burgers that are devoured!</h2>
+      <h2>Burgers you've eaten!</h2>
 
         <ul>
           {{#each burgers}}
@@ -15,7 +15,7 @@
 
                 <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                   <input type="hidden" name="devoured" value="1">
-                  <button type="submit">THROW UP!</button>
+                  <button type="submit">PUKE!</button>
                 </form>
               </li>
             {{/unless}}
@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-sm-4">
-      <h2>Burgers that are not devoured!</h2>
+      <h2>Burgers to devour!</h2>
       <ul>
         {{#each burgers}}
           {{#if this.devoured}}
@@ -33,7 +33,7 @@
 
               <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="0">
-                <button type="submit">EAT THEM!</button>
+                <button type="submit">DEVOUR!</button>
               </form>
             </li>
           {{/if}}
