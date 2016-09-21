@@ -13,13 +13,14 @@ router.get('/', function(req,res) {
 router.get('/burgers', function(req,res) {
 	burger.selectAll('events', function(data){
 		var hbsObject = {burgers : data}
-		console.log(hbsObject)
+		// console.log(hbsObject)
 		res.render('index', hbsObject);
 	});
 });
 
 //Create
 router.post('/burgers/create', function(req,res) {
+	console.log(req.body.burger_name);
 	burger.insertOne('events', req.body.burger_name, req.body.devoured, function(data){
 		res.redirect('/burgers')
 	});

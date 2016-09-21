@@ -21,7 +21,7 @@ var orm = {
     },
     insertOne: function(tableInput, burgerName, devoured, cb) {
         var queryString = 'INSERT INTO ' + tableInput + ' (burger_name, devoured) ';
-        queryString += 'VALUES (' + burgerName + ", " + devoured + ');';
+        queryString += 'VALUES ("' + burgerName + '", ' + devoured + ');';
 
         console.log(queryString);
 
