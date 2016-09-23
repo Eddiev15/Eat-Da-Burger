@@ -15,7 +15,7 @@
 
                 <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                   <input type="hidden" name="devoured" value="1">
-                  <button type="submit">PUKE!</button>
+                  <button class="btn" type="submit">PUKE!</button>
                 </form>
               </li>
             {{/unless}}
@@ -33,7 +33,7 @@
 
               <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="0">
-                <button type="submit">DEVOUR!</button>
+                <button class="btn" type="submit">DEVOUR!</button>
               </form>
             </li>
           {{/if}}
